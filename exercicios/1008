@@ -1,0 +1,19 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner input = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("0.00");
+        int num = input.nextInt();
+        double h = input.nextDouble();
+        double hh = input.nextDouble();
+        double sal = h*hh;
+        System.out.println("NUMBER = " + num);
+        System.out.println("SALARY = U$ " + df.format(sal));
+ 
+    }
+ 
+}
