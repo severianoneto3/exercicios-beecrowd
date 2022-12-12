@@ -1,0 +1,18 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        DecimalFormat df = new DecimalFormat("0.00000");
+        Scanner input = new Scanner(System.in);
+        float a = input.nextFloat();
+        float b = input.nextFloat();
+        float m = (float) ((a*3.5)+(b*7.5))/11;
+        System.out.println("MEDIA = " + df.format(m));
+        input.close();
+ 
+    }
+ 
+}
