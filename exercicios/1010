@@ -1,0 +1,26 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner input = new Scanner(System.in);
+	        DecimalFormat df = new DecimalFormat("0.00");
+	        String prod1[];
+	        prod1 = input.nextLine().split(" ");
+	        int code1 = Integer.parseInt(prod1[0]);
+	        int unit1 = Integer.parseInt(prod1[1]);
+	        double price1 = Double.parseDouble(prod1[2]);
+	        String prod2[];
+	        prod2 = input.nextLine().split(" ");
+	        int code2 = Integer.parseInt(prod2[0]);
+	        int unit2 = Integer.parseInt(prod2[1]);
+	        double price2 = Double.parseDouble(prod2[2]);
+	        double valor = unit1*price1 + unit2*price2;
+	        System.out.println("VALOR A PAGAR: R$ " + df.format(valor));
+	        input.close();
+ 
+    }
+ 
+}
