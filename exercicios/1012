@@ -1,0 +1,31 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+       Scanner input = new Scanner(System.in);
+	        DecimalFormat df = new DecimalFormat("0.000");
+	        String values[];
+	        values = input.nextLine().split(" ");
+	        double a = Double.parseDouble(values[0]);
+	        double b = Double.parseDouble(values[1]);
+	        double c = Double.parseDouble(values[2]);
+	        double pi = 3.14159;
+	        double triangulo = (a*c)/2;
+	        System.out.println("TRIANGULO: " + df.format(triangulo));
+	        double circulo = pi*Math.pow(c,2);
+	        System.out.println("CIRCULO: " + df.format(circulo));
+	        double trapezio = ((a+b)*c)/2;
+	        System.out.println("TRAPEZIO: " + df.format(trapezio));
+	        double quadrado = Math.pow(b,2);
+	        System.out.println("QUADRADO: " + df.format(quadrado));
+	        double retangulo = a*b;
+	        System.out.println("RETANGULO: " + df.format(retangulo));
+	        input.close(); 
+ 
+    }
+ 
+}
