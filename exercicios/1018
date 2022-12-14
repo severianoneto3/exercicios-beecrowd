@@ -1,0 +1,61 @@
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+        Scanner input = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0");
+		int quant = input.nextInt();
+		
+		int quant100 = quant / 100;
+		double quant100double = quant / 100.0;
+		double resto100 = ((quant100double - quant100) * 100);
+		int resto100int = Integer.parseInt(df.format(resto100));
+		
+		int quant50 = resto100int / 50;
+		double quant50double = resto100int / 50.0;
+		double resto50 = ((quant50double - quant50) * 50);
+		int resto50int = Integer.parseInt(df.format(resto50));
+		
+		int quant20 = resto50int/20;
+		double quant20double = resto50int/20.0;
+		double resto20 = ((quant20double - quant20) * 20);
+		int resto20int = Integer.parseInt(df.format(resto20));
+		
+		int quant10 = resto20int/10;
+		double quant10double = resto20int/10.0;
+		double resto10 = ((quant10double - quant10) * 10);
+		int resto10int = Integer.parseInt(df.format(resto10));
+		
+		int quant5 = resto10int/5;
+		double quant5double = resto10int/5.0;
+		double resto5 = ((quant5double - quant5) * 5);
+		int resto5int = Integer.parseInt(df.format(resto5));
+		
+		int quant2 = resto5int/2;
+		double quant2double = resto5int/2.0;
+		double resto2 = ((quant2double - quant2) * 2);
+		int resto2int = Integer.parseInt(df.format(resto2));
+		
+		int quant1 = resto2int/1;
+		double quant1double = resto2int/1.0;
+		double resto1 = ((quant2double - quant1) * 1);
+		int resto1int = Integer.parseInt(df.format(resto1));
+		
+		System.out.println(quant);
+		System.out.println(quant100 + " nota(s) de R$ 100,00");
+		System.out.println(quant50 + " nota(s) de R$ 50,00");
+		System.out.println(quant20 + " nota(s) de R$ 20,00");
+		System.out.println(quant10 + " nota(s) de R$ 10,00");
+		System.out.println(quant5 + " nota(s) de R$ 5,00");
+		System.out.println(quant2 + " nota(s) de R$ 2,00");
+		System.out.println(quant1 + " nota(s) de R$ 1,00");
+		
+		input.close();
+ 
+    }
+ 
+}
