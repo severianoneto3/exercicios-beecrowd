@@ -1,0 +1,28 @@
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+        Scanner input = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0");
+		int qtdsec = input.nextInt();
+		
+		int hora = qtdsec / 3600;
+		double horadouble = qtdsec / 3600.0;
+		double restohora = ((horadouble - hora) * 3600);
+		int restohoraint = Integer.parseInt(df.format(restohora));
+		
+		int min = restohoraint / 60;
+		double mindouble = restohoraint / 60.0;
+		double restomin = ((mindouble - min) * 60);
+		int restominint = Integer.parseInt(df.format(restomin));
+		
+		System.out.println(hora + ":" + min + ":" + restominint);
+		input.close();
+ 
+    }
+ 
+}
