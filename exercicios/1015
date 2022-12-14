@@ -1,0 +1,27 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+            Scanner input = new Scanner(System.in);
+	        DecimalFormat df = new DecimalFormat("0.0000");
+	        String p1[];
+	        p1 = input.nextLine().split(" ");
+	        double x1 = Double.parseDouble(p1[0]);
+	        double y1 = Double.parseDouble(p1[1]);
+	        String p2[];
+	        p2 = input.nextLine().split(" ");
+	        double x2 = Double.parseDouble(p2[0]);
+	        double y2 = Double.parseDouble(p2[1]);
+	        double expx = Math.pow((x2-x1),2);
+	        double expy = Math.pow((y2-y1),2);
+	        double distance = Math.sqrt(expx+expy);
+	        System.out.println(df.format(distance));
+	        input.close();
+ 
+    }
+ 
+}
