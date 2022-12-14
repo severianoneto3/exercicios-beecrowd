@@ -1,0 +1,21 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+        Scanner input = new Scanner(System.in);
+		String read[];
+        read = input.nextLine().split(" ");
+        int a = Integer.parseInt(read[0]);
+        int b = Integer.parseInt(read[1]);
+        int c = Integer.parseInt(read[2]);
+        int maior = (a+b+(Math.abs(a-b)))/2;
+        int maiorfin = (maior+c+(Math.abs(maior-c)))/2;
+        System.out.println(maiorfin + " eh o maior");
+		input.close();
+ 
+    }
+ 
+}
