@@ -1,0 +1,30 @@
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+        Scanner input = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0");
+		int qtddias = input.nextInt();
+		
+		int anos = qtddias / 365;
+		double anosdouble = qtddias / 365.0;
+		double restoanos = ((anosdouble - anos) * 365);
+		int restoanosint = Integer.parseInt(df.format(restoanos));
+		
+		int mes = restoanosint / 30;
+		double mesdouble = restoanosint / 30.0;
+		double restomes = ((mesdouble - mes) * 30);
+		int restomesint = Integer.parseInt(df.format(restomes));
+		
+		System.out.println(anos + " ano(s)");
+		System.out.println(mes + " mes(es)");
+		System.out.println(restomesint + " dia(s)");
+		input.close();
+ 
+    }
+ 
+}
