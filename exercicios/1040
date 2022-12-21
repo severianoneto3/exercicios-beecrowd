@@ -1,0 +1,50 @@
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+        Scanner input = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.0");
+		String code[];
+		code = input.nextLine().split(" ");
+		double n1 = Double.parseDouble(code[0]);
+		double n2 = Double.parseDouble(code[1]);
+		double n3 = Double.parseDouble(code[2]);
+		double n4 = Double.parseDouble(code[3]);
+
+		double n1pond = n1 * 2;
+		double n2pond = n2 * 3;
+		double n3pond = n3 * 4;
+		double n4pond = n4 * 1;
+		double media = (n1pond + n2pond + n3pond + n4pond) / 10.0;
+
+		System.out.println("Media: " + df.format(media));
+		
+		if (media >= 7.0) {
+			System.out.println("Aluno aprovado.");
+		} else if (media >= 5.0) {
+			System.out.println("Aluno em exame.");
+			double notaexame = input.nextDouble();
+			System.out.println("Nota do exame: " + df.format(notaexame));
+			double mf = (media + notaexame) / 2.0;
+
+			if (mf >= 5.0) {
+				System.out.println("Aluno aprovado.");
+				System.out.println("Media final: " + df.format(mf));
+			} else {
+				System.out.println("Aluno reprovado.");
+				System.out.println("Media final: " + df.format(mf));
+			}
+			
+		} else {
+			System.out.println("Aluno reprovado.");
+		}
+
+		input.close();
+ 
+    }
+ 
+}
