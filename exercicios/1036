@@ -1,0 +1,31 @@
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+        Scanner input = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00000");
+		String cf[];
+		cf = input.nextLine().split(" ");
+		double a = Double.parseDouble(cf[0]);
+		double b = Double.parseDouble(cf[1]);
+		double c = Double.parseDouble(cf[2]);
+		double delta = (Math.pow(b, 2)) - (4 * a * c);
+		double root1 = (-b + (Math.sqrt(delta))) / (2 * a);
+		double root2 = (-b - (Math.sqrt(delta))) / (2 * a);
+
+		if (a == 0 || delta < 0) {
+			System.out.println("Impossivel calcular");
+		} else {
+			System.out.println("R1 = " + df.format(root1));
+			System.out.println("R2 = " + df.format(root2));
+		}
+    
+		input.close();
+ 
+    }
+ 
+}
